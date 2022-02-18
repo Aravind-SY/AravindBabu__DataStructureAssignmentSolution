@@ -13,29 +13,24 @@ public class skyscraper {
 	Scanner scanner = new Scanner(System.in);
 
 	public void implementSkyscraperApp() {
-		// get the no. of floors
+		
 		System.out.println("enter the total no of floors in the building");
 		noOfFloors = scanner.nextInt();
 
-		// initialize the floorSizePerDay array
+		
 		floorSizePerDay = new int[noOfFloors];
 
-		// get the size of the floor per day
+		
 		getFloorSizePerDay();
 		scanner.close();
-
-		// store the size of floor per day in ascending order
+		
 		storeFloorSizeInAscOrder();
 
-		// store the size of floors in a stack so that I can get the largest floor when
-		// needed
 		storeFloorSizeInStack();
 
-		// run the algorithm to display the size of floors in each day
 		displayFloorsToBeConstructed();
 	}
 
-	// function to get the size of the floor per day
 	private void getFloorSizePerDay() {
 		for (int i = 0; i < noOfFloors; i++) {
 			System.out.println("enter the floor size given on day : " + (i + 1));
@@ -43,14 +38,12 @@ public class skyscraper {
 		}
 	}
 
-	// function to store the size of floor per day in ascending order
 	private void storeFloorSizeInAscOrder() {
 		floorSizeInAscOrder = floorSizePerDay.clone();
 		SortingService.sort(floorSizeInAscOrder, 0, floorSizeInAscOrder.length - 1);
 	}
 
-	// function to store the size of floors in a stack so that I can get the largest
-	// floor when needed
+
 	private void storeFloorSizeInStack() {
 		floorSizeInStack = new Stack<>();
 		for (int size : floorSizeInAscOrder) {
@@ -58,7 +51,7 @@ public class skyscraper {
 		}
 	}
 
-	// function to run the algorithm to display the size of floors in each day
+ay
 	private void displayFloorsToBeConstructed() {
 		System.out.println();
 		System.out.println("The order of construction is as follows");
